@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-class SearchCom extends Component{
+class SearchCom extends Component{      // 搜索组件
     constructor(props){
         super(props);
         this.state = {
@@ -18,11 +18,11 @@ class SearchCom extends Component{
         )
     }
     keyDown = (e)=>{
-        if(e.keyCode === 13 || e.target.id === 'searchButton'){
+        if(e.keyCode === 13 || e.target.id === 'searchButton'){     // 当按下回车键或点击搜索按钮时进行搜索查询
             let showArr = []
             for(let item of this.props.data){
                 //console.log(item)
-                if(item.province.includes(this.state.value) && this.state.value.length > 0){
+                if(item.province.includes(this.state.value) && this.state.value.length > 0){        // 判断字串，如果满足则添加到数组
                     showArr.push(<tr key = {item.province}>
                                     <td>{item.province}</td>
                                     <td>{item.confirm}</td>
@@ -32,7 +32,7 @@ class SearchCom extends Component{
                                 </tr>)
                 }
             }
-            if(showArr.length > 0){
+            if(showArr.length > 0){     // 数组非空时进行列表渲染
                 this.setState({
                     searchResult:(
                         <div className = 'marginTop'>

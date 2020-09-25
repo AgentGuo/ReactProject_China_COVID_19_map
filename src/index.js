@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import jsonData from './feiyan3.json'   // 导入肺炎数据
+import jsonData from './feiyan.json'   // 导入肺炎数据
 //import echarts from 'echarts';
 import './searchCom';
-import './panfeng.css';
-import SearchCom from './searchCom';
+import './index.css';
+import SearchCom from './searchCom';        // 搜索组件
 
-class ChinaMap extends Component{
+class ChinaMap extends Component{       // 地图组件
     constructor(props){
         super(props);
         this.state = {
@@ -23,12 +23,12 @@ class ChinaMap extends Component{
             </div>
         )
     }
-    componentWillMount(){
+    componentWillMount(){       // 将要挂载时获取肺炎数据
         this.setState({
             provinceList:this.getData()
         })
     }
-    componentDidMount(){
+    componentDidMount(){        // 页面挂载完毕后，渲染地图
         let dataList = []
         for(let temp of this.state.provinceList){
             dataList.push({
@@ -131,7 +131,7 @@ class ChinaMap extends Component{
     }
 }
 
-class FeiYanForm extends Component{
+class FeiYanForm extends Component{     // 表格组件
     constructor(props){
         super(props);
         this.state = {

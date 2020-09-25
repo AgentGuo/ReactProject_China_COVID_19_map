@@ -30,7 +30,7 @@ npm start
 
 ### 没有安装React？
 
-可以参考网上一些教程，或者[点击这里]()
+可以参考网上一些教程，或者[点击这里](https://blog.csdn.net/weixin_44338712/article/details/108755086)
 
 
 
